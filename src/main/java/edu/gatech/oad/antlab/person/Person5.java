@@ -31,7 +31,11 @@ public class Person5 {
 	 */
 	private String calc(String input) {
 	  //Person 5 put your implementation here
-	  return null;
+	  StringBuilder NewStr = new StringBuilder(input);
+	  String OffsetStr = NewStr.substring(0,1);
+	  NewStr.append(OffsetStr);
+
+	  return new String(NewStr.delete(0,1));
 	}
 	
 	/**
