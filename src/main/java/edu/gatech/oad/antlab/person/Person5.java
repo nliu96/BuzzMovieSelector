@@ -32,10 +32,10 @@ public class Person5 {
 	private String calc(String input) {
 	  //Person 5 put your implementation here
 	  StringBuilder NewStr = new StringBuilder(input);
-	  String OffsetStr = NewStr.substring(0,1);
+	  String OffsetStr = NewStr.substring(0,2);
 	  NewStr.append(OffsetStr);
 
-	  return new String(NewStr.delete(0,1));
+	  return new String(NewStr.delete(0,2));
 	}
 	
 	/**
