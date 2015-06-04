@@ -2,9 +2,20 @@ apply plugin: 'java'
 
 
 jar{
+	archiveName = "snguyen48.jar"
+	from {
+		configurations.runtime.collect{
+		it.isDirectory () ? it :zipTree(it)
+		}
+		configurations.compile.collect{
+		it.isDirectory() ? it:zipTree(it)
+		}
+	}
+	
 	manifest{
 		attributes 'Main-Class':'edu.gatech.oad.antlab.pkg1.AntLabMain'
 	}
+	exclude 'META-INF/*RSA', 'META-INF/*.SF', 'META-INF/*DSA'
 }
 			
 repositories {
@@ -13,7 +24,7 @@ repositories {
 
 dependencies {
 
-   compile files('lib/resources.jar')
+   compile fileTree(dir:'lib', include:'*.jar')
 
 }
 
